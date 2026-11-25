@@ -28,4 +28,15 @@ export class TodoDashboardComponent implements OnInit {
     
   }
 
+  updateTodo(updateObj: ItodosArr){
+    console.log(updateObj)
+    let getIndex = todosArr.findIndex(t => t.todoId === updateObj.todoId)
+    todosArr[getIndex] = updateObj
+  }
+
+  getRemoveTodo(id : string){
+    let getIndex = todosArr.findIndex(t => t.todoId === id)
+    todosArr.splice(getIndex, 1)
+  } 
+
 }

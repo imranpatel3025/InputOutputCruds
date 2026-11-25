@@ -13,6 +13,8 @@ export class TodoFormComponent implements OnInit, OnChanges {
 
   @Output() eveNewTodo: EventEmitter<ItodosArr> = new EventEmitter<ItodosArr>()
 
+  @Output() emitUpdateTodo: EventEmitter<ItodosArr> = new EventEmitter<ItodosArr>()
+
   @Input() getEditTodo !: ItodosArr
 
   isInEditMode: boolean = false
@@ -40,6 +42,17 @@ export class TodoFormComponent implements OnInit, OnChanges {
       this.eveNewTodo.emit(newTodo)
       this.todoForm.reset()
 
+    }
+  }
+
+  onTodoUpdate(){
+    if(this.todoForm.invalid){
+      this.todoForm.form.markAllAsTouched()
+    }else{
+      let updateObj : ItodosArr = { ...this.todoForm.form.value, todoId:this.getEditTodo.todoId}
+      this.emitUpdateTodo.emit(updateObj)
+      this.isInEditMode = false
+       this.todoForm.reset()
     }
   }
 

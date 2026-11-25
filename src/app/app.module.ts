@@ -12,6 +12,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { PostDashboardComponent } from './components/post-dashboard/post-dashboard.component';
 import { PostCardsComponent } from './components/post-cards/post-cards.component';
 import { PostFormComponent } from './components/post-form/post-form.component'
+import { MatSnackBarModule } from '@angular/material/snack-bar'
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { PostFormComponent } from './components/post-form/post-form.component'
     BrowserAnimationsModule,
     MatButtonModule,
     MatIconModule,
-    FormsModule
+    FormsModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

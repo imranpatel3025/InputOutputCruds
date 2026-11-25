@@ -1,3 +1,4 @@
+
 import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { ItodosArr } from 'src/app/model/todo.model';
 
@@ -13,6 +14,8 @@ export class TodoListComponent implements OnInit {
 
   @Output() emitEditTodo : EventEmitter<ItodosArr> = new EventEmitter<ItodosArr>()
 
+  @Output() emitRemoveTodo : EventEmitter<string> = new EventEmitter<string>()
+
   constructor() { }
 
   ngOnInit(): void {
@@ -23,4 +26,12 @@ export class TodoListComponent implements OnInit {
     
   }
 
+  onDelete(removeId: string){
+    let getConfirm = confirm(`Are you sure, you want to Remove with id ${removeId}`)
+    if(getConfirm){
+      this.emitRemoveTodo.emit(removeId)
+      // let getIndex = this.todoData.findIndex(t => t.todoId === removeId)
+      // this.todoData.splice(getIndex, 1)
+    }
+  }
 }

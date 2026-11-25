@@ -14,7 +14,9 @@
             </div>
             <button *ngIf="!isInEditMode" mat-raised-button color="primary" class="btn-block">Add Todo</button>
             
-            <button type="button" *ngIf="isInEditMode" mat-raised-button color="primary" class="btn-block">Update Todo</button>
+            <button
+                (click)="onTodoUpdate()"
+             type="button" *ngIf="isInEditMode" mat-raised-button color="primary" class="btn-block">Update Todo</button>
         </form>
     </div>
 </div>

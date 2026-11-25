@@ -7,12 +7,12 @@ export const todosArr: Array<ItodosArr> = [
         isCompleted: false
     },
      {
-        todoId: "1",
+        todoId: "2",
         todoName: "HTML",
         isCompleted: true
     },
      {
-        todoId: "1",
+        todoId: "3",
         todoName: "Node",
         isCompleted: false
     }   
