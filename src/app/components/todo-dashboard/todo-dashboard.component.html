@@ -1,0 +1,18 @@
+<div class="container mt-3">
+    <div class="row">
+        <div class="col-md-6">
+
+            <app-todo-form 
+                [getEditTodo]="editTodo"
+            (eveNewTodo)="getNewTodo($event)">
+
+            </app-todo-form>
+        </div>
+        <div class="col-md-6">
+
+            <app-todo-list 
+                (emitEditTodo)="getEditTodo($event)"
+             [todoData]="todosArr"></app-todo-list>
+        </div>
+    </div>
+</div>
